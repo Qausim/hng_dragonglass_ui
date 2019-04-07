@@ -27,7 +27,7 @@ window.addEventListener('click', (e) => {
     if (target !== editor && !toolbarTools.includes(target) && target !== toolbar) {
         toolbar.style.opacity = 0;
 
-        if (editor.textContent.trim()) {
+        if (!editor.textContent.trim()) {
             editor.textContent = editorDefaultText;
         }
     }
