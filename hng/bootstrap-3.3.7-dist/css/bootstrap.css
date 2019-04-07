@@ -1613,6 +1613,10 @@ mark,
 }
 .text-center {
   text-align: center;
+  height: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text-justify {
   text-align: justify;
