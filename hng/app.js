@@ -13,17 +13,20 @@ const editorDefaultText = editor.textContent.trim();
 editor.addEventListener('focus', () => {
     if (editor.textContent.trim() === editorDefaultText) {
         editor.textContent = "";
-        editor.click();
     }
-});
-
-// Set editor default content if text was not entered and user navigated away
-editor.addEventListener('blur', () => {
-    let content = editor.textContent;
-
-    editor.textContent = content ? content : editorDefaultText;
 });
 
 // Focus on editor on tool click
 const toolbarTools = Array.prototype.slice.call(document.querySelectorAll('.toolbar .tool'));
 toolbarTools.forEach(el => el.addEventListener('click', () => editor.focus()));
+
+window.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target !== editor && !toolbarTools.includes(target) && target !== toolbar) {
+        toolbar.style.opacity = 0;
+
+        if (!editor.textContent.trim()) {
+            editor.textContent = editorDefaultText;
+        }
+    }
+});
