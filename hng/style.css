@@ -41,3 +41,25 @@
 [contentEditable=true]:empty:not(:focus):before{
     content:attr(data-text)
 }
+
+
+
+.border-img{
+    width: auto;
+    height: 10rem;
+    background-size: cover;
+    
+}
+.mb-3-cs{
+    margin-bottom: 1rem;
+}
+.mx-40{
+    margin: 0 40%;
+}
+.p-2{
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+.p-0-cs{
+    padding: 0;
+}
